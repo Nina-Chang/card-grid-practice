@@ -1,38 +1,293 @@
-.App {
-  text-align: center;
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* 防止滾動條出現 */
+  background-color: #ffffff;
+  font-family: Arial, sans-serif;
+  /* box-sizing: border-box; */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.game-viewport {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+/* --- 通用樣式 --- */
+.page-container {
+  width: 1920px;
+  height: 1080px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  transform-origin: top left;
+  color: #000000;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* 卡片 */
+.player-container {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 993px;
+  height: 200px;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  gap:20px;
+}
+
+.player-arrow{
+  margin: 10px auto 0 auto;
+}
+
+.player-content{
+  height: 100%;
+  position: relative;  /* ✅ 文字相對此容器置中 */
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+}
+
+.player-score-text{
+  position: absolute;
+  top:60%;
+  left:50%;
+  font-size: 46px;
+  font-weight:800;
+  transform: translateX(-50%);
+}
+
+.cards-container-grid{
+  width: 1655px;
+  height: 671px;
+  /* width: 100vw; */
+  margin-top: 20px;
+  display: grid;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-content:center;
+  position: relative;
+  left:50%;
+  transform: translateX(-50%);
+  /* position: static;  
+  margin: 0;
+  transform: none; */
+
+  /* 3 pair */
+  /* grid-template-columns: repeat(3, 211px);
+  grid-template-rows: repeat(2, 218px);
+  gap: 16px;
+  background-color:#000; */
+  /* 3 pair */
+
+  /* 4 pair */
+  /* grid-template-columns: repeat(4, 211px);
+  grid-template-rows: repeat(2, 218px);
+  gap: 16px;
+  background-color:#000; */
+  /* 4 pair */
+
+  /* 5 pair */
+  /* grid-template-columns: repeat(5, 211px);
+  grid-template-rows: repeat(2, 218px);
+  gap: 16px;
+  background-color:#000; */
+  /* 5 pair */
+
+  /* 6 pair */
+  /* grid-template-columns: repeat(6, 211px);
+  grid-template-rows: repeat(2, 218px);
+  gap: 16px;
+  background-color:#000; */
+  /* 6 pair */
+
+  /* 7 pair */
+  /* grid-template-columns: repeat(7, 211px);
+  grid-template-rows: repeat(2, 218px);
+  gap: 16px;
+  background-color:#000; */
+  /* 7 pair */
+  
+  /* 8 pair */
+  /* grid-template-columns: repeat(8, 211px);
+  grid-template-rows: repeat(2, 218px);
+  gap: 0px;
+  background-color:#000; */
+  /* 8 pair */
+
+  /* 9 pair */
+  /* grid-template-columns: repeat(6, 198px);
+  grid-template-rows: repeat(3, 205px);
+  gap: 16px;
+  background-color:#000; */
+  /* 9 pair */
+
+  /* 10 pair */
+  /* grid-template-columns: repeat(8, 198px);
+  grid-template-rows: repeat(3, 205px);
+  gap:10px;
+  background-color:#000; */
+  /* 10 pair */
+
+  /* 11 pair */
+  /* grid-template-columns: repeat(8, 198px);
+  grid-template-rows: repeat(3, 205px);
+  gap:10px;
+  background-color:#000; */
+  /* 11 pair */
+
+  /* 12 pair */
+  /* grid-template-columns: repeat(8, 198px);
+  grid-template-rows: repeat(3, 205px);
+  gap:10px;
+  background-color:#000; */
+  /* 12 pair */
+
+  /* 13 pair*/
+  /* grid-template-columns: repeat(7, 147px);
+  grid-template-rows: repeat(4, 152px);
+  grid-row-gap: 18px;
+  grid-column-gap: 20px;
+  background-color:#000; */
+  /* 13 pair */
+
+  /* 14 pair */
+  /* grid-template-columns: repeat(7, 147px);
+  grid-template-rows: repeat(4, 152px);
+  grid-row-gap: 18px;
+  grid-column-gap: 20px;
+  background-color:#000; */
+  /* 14 pair */
+
+  /* 15 pair */
+  /* grid-template-columns: repeat(8, 147px);
+  grid-template-rows: repeat(4, 152px);
+  grid-row-gap: 18px;
+  grid-column-gap: 20px;
+  background-color:#000; */
+  /* 15 pair */
+
+  /* 16 pair */
+  /* grid-template-columns: repeat(8, 147px);
+  grid-template-rows: repeat(4, 152px);
+  grid-row-gap: 18px;
+  grid-column-gap: 20px;
+  background-color:#000; */
+  /* 16 pair */
+
+  /* 17 pair */
+  /* grid-template-columns: repeat(9, 147px);
+  grid-template-rows: repeat(4, 152px);
+  grid-row-gap: 18px;
+  grid-column-gap: 20px;
+  background-color:#000; */
+  /* 17 pair */
+
+  /* 18 pair */
+  /* grid-template-columns: repeat(9, 147px);
+  grid-template-rows: repeat(4, 152px);
+  grid-row-gap: 18px;
+  grid-column-gap: 20px;
+  background-color:#000; */
+  /* 18 pair */
+
+  /* 19 pair */
+  /* grid-template-columns: repeat(10, 147px);
+  grid-template-rows: repeat(4, 152px);
+  grid-row-gap: 18px;
+  grid-column-gap: 20px;
+  background-color:#000; */
+  /* 19 pair */
+
+  /* 20 pair */
+  /* grid-template-columns: repeat(10, 147px);
+  grid-template-rows: repeat(4, 152px);
+  grid-row-gap: 18px;
+  grid-column-gap: 20px;
+  background-color:#000; */
+  /* 20 pair */
 }
 
-.App-link {
-  color: #61dafb;
+.card-frame{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  transform-origin: center;
+
+  /* 3pair ~ 12pair */
+  /* width: 100%;     
+  height: 100%; */
+
+  /* 13 pair ~ 20pair*/
+  transform: scale(0.8);  
+  width: 135%;     
+  height: 135%;
+  margin-top: -24px;
+  margin-left: -20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* 10 pair */
+/* .card-frame:nth-child(17) {
+  grid-column-start:3;
+} */
+/* 10 pair */
+/* 11 pair */
+/* .card-frame:nth-child(17) {
+  grid-column-start:2;
+} */
+/* 11 pair */
+/* 13 pair */
+/* .card-frame:nth-child(22) {
+  grid-column-start:2;
+} */
+/* 13 pair */
+/* 13 pair */
+/* .card-frame:nth-child(22) {
+  grid-column-start:2;
+} */
+/* 13 pair */
+/* 15 pair */
+/* .card-frame:nth-child(25) {
+  grid-column-start:2;
+} */
+/* 15 pair */
+/* 17 pair */
+/* .card-frame:nth-child(28) {
+  grid-column-start:2;
+} */
+/* 17 pair */
+/* 19 pair */
+/* .card-frame:nth-child(31) {
+  grid-column-start:2;
+} */
+/* 19 pair */
+
+.card-choosed{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width:100%;
+  height: 100%;
+  z-index:99;
+}
+
+.card-content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
 }
