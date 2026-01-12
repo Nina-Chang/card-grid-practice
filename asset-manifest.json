@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/card-grid-practice/static/css/main.8faee14a.css",
+    "main.js": "/card-grid-practice/static/js/main.e0e75918.js",
+    "static/js/453.6f87c802.chunk.js": "/card-grid-practice/static/js/453.6f87c802.chunk.js",
+    "index.html": "/card-grid-practice/index.html",
+    "main.8faee14a.css.map": "/card-grid-practice/static/css/main.8faee14a.css.map",
+    "main.e0e75918.js.map": "/card-grid-practice/static/js/main.e0e75918.js.map",
+    "453.6f87c802.chunk.js.map": "/card-grid-practice/static/js/453.6f87c802.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8faee14a.css",
+    "static/js/main.e0e75918.js"
+  ]
+}
